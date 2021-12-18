@@ -31,58 +31,110 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
         rel="stylesheet">
     
+    <!-- ANIMATE.CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    
     <!--NORMALIZE CSS -->
     <link rel="stylesheet" href="assets/css/normalize.css">
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+
 </head>
 <body>
-    <div class="container">
-        <section class="header">
-            <div class="d-flex flex-row justify-content-between">
-                <div class="d-flex flex-row left-nav">
-                    <div class="logo">
-                        <a href="index.html" class="nav-link" title="Avinash Dengani"><img src="assets/images/logo/dark.png" alt="logo-dark" class="logo-img"></a>
+    <div class="">
+        <div class="header shadow-lg">
+            <div class="container">
+                <div class="d-flex flex-row justify-content-between ">
+                    <div class="d-flex flex-row left-nav">
+                        <div class="logo">
+                            <a href="index.html" class="nav-link" title="Avinash Dengani"><img src="assets/images/logo/dark.png" alt="logo-dark" class="logo-img"></a>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row right-nav">
+                        <ul class="nav my-nav-list">
+                            <!-- ABOUT ME -->
+                            <li class="nav-item my-nav-item">
+                              <a class="nav-link active my-nav-link" href="#about-me">About Me</a>
+                            </li>
+                            <!-- My Projects -->
+                            <li class="nav-item my-nav-item">
+                                <a class="nav-link active my-nav-link" href="#projects">Projects</a>
+                            </li>
+                            <!-- My Skills -->
+                            <li class="nav-item my-nav-item">
+                                <a class="nav-link active my-nav-link" href="#skills">Skills</a>
+                            </li>
+                            <!-- My Skills -->
+                            <li class="nav-item my-nav-item">
+                                <a class="nav-link active my-nav-link" href="#education">Education</a>
+                            </li>
+                            <!-- My Contact -->
+                            <li class="nav-item my-nav-item">
+                                <a class="nav-link active my-nav-link" href="#contact">Contact Me</a>
+                            </li>
+                            <li class="nav-item my-nav-item switch-color">
+                                <div class="nav-link my-nav-link">
+                                    <label class="switch-color-mode">
+                                        <div class="switch-color-mode-checkbox">
+                                        <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
+                                        <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="media-navbar">
+                        <div class="d-flex flex-column media-right-nav nav-link align-items-end">
+                            <div class="media-right-nav-hamburgar">
+                                <span class="media-right-nav-hamburgar-icon_bar"></span>
+                                <span class="media-right-nav-hamburgar-icon_bar"></span>
+                                <span class="media-right-nav-hamburgar-icon_bar"></span>
+                            </div>
+                            <div class="media-right-nav-list d-none">
+                                <ul class="nav my-nav-list d-flex flex-column">
+                                    <!-- ABOUT ME -->
+                                    <li class="nav-item my-nav-item">
+                                      <a class="nav-link active my-nav-link" href="#about-me">About Me</a>
+                                    </li>
+                                    <!-- My Projects -->
+                                    <li class="nav-item my-nav-item">
+                                        <a class="nav-link active my-nav-link" href="#projects">Projects</a>
+                                    </li>
+                                    <!-- My Skills -->
+                                    <li class="nav-item my-nav-item">
+                                        <a class="nav-link active my-nav-link" href="#skills">Skills</a>
+                                    </li>
+                                    <!-- My Skills -->
+                                    <li class="nav-item my-nav-item">
+                                        <a class="nav-link active my-nav-link" href="#education">Education</a>
+                                    </li>
+                                    <!-- My Contact -->
+                                    <li class="nav-item my-nav-item">
+                                        <a class="nav-link active my-nav-link" href="#contact">Contact Me</a>
+                                    </li>
+                                    <li class="nav-item my-nav-item switch-color">
+                                        <div class="nav-link my-nav-link">
+                                            <label class="switch-color-mode">
+                                                <div class="switch-color-mode-checkbox">
+                                                <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
+                                                <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-row right-nav">
-                    <ul class="nav my-nav-list">
-                        <!-- ABOUT ME -->
-                        <li class="nav-item my-nav-item">
-                          <a class="nav-link active my-nav-link" href="#about">About Me</a>
-                        </li>
-                        <!-- My Projects -->
-                        <li class="nav-item my-nav-item">
-                            <a class="nav-link active my-nav-link" href="#projects">Projects</a>
-                        </li>
-                        <!-- My Skills -->
-                        <li class="nav-item my-nav-item">
-                            <a class="nav-link active my-nav-link" href="#skills">Skills</a>
-                        </li>
-                        <!-- My Skills -->
-                        <li class="nav-item my-nav-item">
-                            <a class="nav-link active my-nav-link" href="#education">Education</a>
-                        </li>
-                        <!-- My Contact -->
-                        <li class="nav-item my-nav-item">
-                            <a class="nav-link active my-nav-link" href="#contact">Contact Me</a>
-                        </li>
-                        <li class="nav-item my-nav-item">
-                            <div class="nav-link my-nav-link switch-color">
-                                <label class="switch-color-mode">
-                                    <div class="switch-color-mode-checkbox">
-                                      <input type="checkbox" id="switch-color-mode-checkbox-input"/>
-                                      <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
-                                    </div>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
-        </section>
+        </div>
     </div>
     <!-- JAVASCRIPT -->
 
