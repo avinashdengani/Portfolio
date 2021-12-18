@@ -1,0 +1,31 @@
+/* Color Variables */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #333333;
+    --pink-red: #ee044c;
+    --color-primary: #000000;
+    --bg-primary: #ecf0f3; 
+}
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;z
+}
+div, h1, h2, h3, h4, h5, h6, span, p, a, ul, li, button {
+    margin: 0px;
+    padding: 0px;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+textarea {
+    resize: none;
+}
+
+.bg-primary {
+    background: var(--bg-primary) !important;
+    color: var(--color-primary) !important;
+}
