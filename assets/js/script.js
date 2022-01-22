@@ -11,7 +11,12 @@ function setHomePageUrl() {
     $(".logo-link").attr("href", indexPageUrl);
 }
 
+
 setHomePageUrl();
+
+
+
+
 $(document).ready(function() {
     //  FAVICO
     favico = document.createElement('link');
@@ -76,6 +81,7 @@ $(document).ready(function() {
     }
 });
 
+
 //HAMBURGAR
 $(document).ready(function(){
 	$('.media-right-nav-hamburgar').click(function(){
@@ -83,6 +89,53 @@ $(document).ready(function(){
         $(".media-right-nav-list").toggleClass('d-none');
    });
 });
+
+
+ // MEDIA WATCHER
+ function mediaWatcherFunction(mediaWatcher) {
+    if (mediaWatcher.matches) {
+        // ABOUT
+        $(".about-content-data").removeClass("flex-row");
+        $(".about-content-data").addClass("flex-column");
+        
+        $(".about-content-data-column-child").addClass("d-flex");
+        $(".about-content-data-column-child").addClass("flex-column");
+        $(".about-content-data-column-child").addClass("align-items-center");
+        $(".about-content-data-column").removeClass("col-md-6");
+        
+        // EDUCATION
+        $(".education-content").removeClass("flex-row");
+        $(".education-content").addClass("flex-column");
+        
+        //CONTACT
+        $(".contact-details").removeClass("flex-row");
+        $(".contact-details").addClass("flex-column");
+    } else {
+        // ABOUT
+        $(".about-content-data").addClass("flex-row");
+        $(".about-content-data").removeClass("flex-column");
+        
+        $(".about-content-data-column-child").removeClass("d-flex");
+        $(".about-content-data-column-child").removeClass("flex-column");
+        $(".about-content-data-column-child").removeClass("align-items-center");
+        
+        $(".about-content-data-column").addClass("col-md-6");
+
+        // EDUCATION
+        $(".education-content").addClass("flex-row");
+        $(".education-content").removeClass("flex-column");
+        
+        //CONTACT
+        $(".contact-details").addClass("flex-row");
+        $(".contact-details").removeClass("flex-column");
+    }
+}
+var mediaWatcher = window.matchMedia("(max-width: 1000px)");
+mediaWatcherFunction(mediaWatcher);
+mediaWatcher.addListener(mediaWatcherFunction);
+
+
+
 
 //OWL CAROUSEL
 $(document).ready(function(){
