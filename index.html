@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+        name="keywords"
+        content="Avinash, Dengani, Avinash Dengani, about, Portfolio, Portfolio Avinash, Avinash's Portfolio, GitHub, HTML, CSS, JavaScript, PHP, avinashdengani.tech, avinashdengani"/>
+
+    <meta name="author" content="Avinash Dengani"/>
+    <meta
+		name="description"
+		content="Portfolio of Avinash Dengani"/>
+
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash's Portfolio</title>
+    <title>Portfolio | Avinash Dengani</title>
     
     <!-- BOOTSTRAP-->
     <link 
@@ -16,8 +28,7 @@
     <!-- FONT-AWESOME -->
     <link 
         rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" 
-        referrerpolicy="no-referrer" />
+        href="assets/css/vendors/fontawesome.all.css"/>
 
     <!-- GOOGLE FONTS -->
     <link 
@@ -27,6 +38,8 @@
         rel="preconnect" 
         href="https://fonts.gstatic.com" 
         crossorigin>
+    <!-- JQUERY UI -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link 
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" 
         rel="stylesheet">
@@ -36,106 +49,193 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    
+    <!-- OWL CAROUSEL -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+    <!-- Responsive Tabs -->
+    <link rel="stylesheet" href="assets/css/vendors/responsive-tabs.css">
     <!--NORMALIZE CSS -->
-    <link rel="stylesheet" href="assets/css/normalize.css">
-
+    <link rel="stylesheet" href="assets/css/vendors/normalize.css">
+    <!-- GROWL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.css" integrity="sha512-bHAmDko6dIkQXQGO56+bsFtl7FJEuzQ0qKsB+cpdzmOV0D7ONYYwfV8ub+7yevWSCZgP10lIy7aTW8eKv5IgTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-
 </head>
 <body>
-    <div class="">
-        <div class="header shadow-lg">
-            <div class="container">
-                <div class="d-flex flex-row justify-content-between ">
-                    <div class="d-flex flex-row left-nav">
-                        <div class="logo">
-                            <a href="index.html" class="nav-link" title="Avinash Dengani"><img src="assets/images/logo/dark.png" alt="logo-dark" class="logo-img"></a>
+    <div class="container">
+        <!-- Preloader -->
+        <div id="preloader" class="user-select-none">
+            <div id="status" class="user-select-none">&nbsp;
+                <span class="user-select-none">{</span class="user-select-none"><span class="user-select-none">}</span>
+            </div>
+        </div>
+    </div>
+    <button  
+        title="GO TO TOP"
+        class="btn btn-pink-red rounded-circle animate__animated  animate__bounceInDown animate__slow "
+        id="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <div class="header">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-between ">
+                <div class="d-flex flex-row left-nav">
+                    <div class="logo">
+                        <a 
+                            href="index.html" 
+                            class="nav-link logo-link"
+                            title="Avinash Dengani">
+                                <img 
+                                    src="assets/images/logo/dark.png" 
+                                    alt="logo-dark" 
+                                    class="logo-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex flex-row right-nav">
+                    <ul class="nav my-nav-list">
+                        <!-- ABOUT ME -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" href="#about" id="nav-about">About <i class="fas fa-user-graduate "></i></a>
+                        </li>
+                        <!-- My Projects -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" href="#projects" id="nav-project">Projects <i class="fas fa-tasks "></i></a>
+                        </li>
+                        <!-- My Skills -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" href="#skills" id="nav-skills">Skills <i class="fas fa-chart-area"></i></a>
+                        </li>
+                        <!-- My EDUCATION -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" href="#education" id="nav-education">Education <i class="fas fa-university "></i></a>
+                        </li>
+                        <!-- My Contact -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" href="#contact" id="nav-contact">Contact <i class="fas fa-phone-square-alt"></i></a>
+                        </li>
+                        <!-- Resume -->
+                        <li class="nav-item my-nav-item">
+                            <a class="nav-link active my-nav-link" target="_blank" href="assets/resume/resume.pdf">Resume <i class="fas fa-file-contract"></i></a>
+                        </li>
+                        <li class="nav-item my-nav-item switch-color">
+                            <div class="nav-link">
+                                <label class="switch-color-mode">
+                                    <div class="switch-color-mode-checkbox">
+                                    <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
+                                    <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="media-navbar">
+                    <div class="d-flex flex-column media-right-nav nav-link align-items-end">
+                        <div class="media-right-nav-hamburgar">
+                            <span class="media-right-nav-hamburgar-icon_bar"></span>
+                            <span class="media-right-nav-hamburgar-icon_bar"></span>
+                            <span class="media-right-nav-hamburgar-icon_bar"></span>
                         </div>
-                    </div>
-                    <div class="d-flex flex-row right-nav">
-                        <ul class="nav my-nav-list">
-                            <!-- ABOUT ME -->
-                            <li class="nav-item my-nav-item">
-                              <a class="nav-link active my-nav-link" href="#about-me">About Me</a>
-                            </li>
-                            <!-- My Projects -->
-                            <li class="nav-item my-nav-item">
-                                <a class="nav-link active my-nav-link" href="#projects">Projects</a>
-                            </li>
-                            <!-- My Skills -->
-                            <li class="nav-item my-nav-item">
-                                <a class="nav-link active my-nav-link" href="#skills">Skills</a>
-                            </li>
-                            <!-- My Skills -->
-                            <li class="nav-item my-nav-item">
-                                <a class="nav-link active my-nav-link" href="#education">Education</a>
-                            </li>
-                            <!-- My Contact -->
-                            <li class="nav-item my-nav-item">
-                                <a class="nav-link active my-nav-link" href="#contact">Contact Me</a>
-                            </li>
-                            <li class="nav-item my-nav-item switch-color">
-                                <div class="nav-link my-nav-link">
-                                    <label class="switch-color-mode">
-                                        <div class="switch-color-mode-checkbox">
-                                        <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
-                                        <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="media-navbar">
-                        <div class="d-flex flex-column media-right-nav nav-link align-items-end">
-                            <div class="media-right-nav-hamburgar">
-                                <span class="media-right-nav-hamburgar-icon_bar"></span>
-                                <span class="media-right-nav-hamburgar-icon_bar"></span>
-                                <span class="media-right-nav-hamburgar-icon_bar"></span>
-                            </div>
-                            <div class="media-right-nav-list d-none">
-                                <ul class="nav my-nav-list d-flex flex-column">
-                                    <!-- ABOUT ME -->
-                                    <li class="nav-item my-nav-item">
-                                      <a class="nav-link active my-nav-link" href="#about-me">About Me</a>
-                                    </li>
-                                    <!-- My Projects -->
-                                    <li class="nav-item my-nav-item">
-                                        <a class="nav-link active my-nav-link" href="#projects">Projects</a>
-                                    </li>
-                                    <!-- My Skills -->
-                                    <li class="nav-item my-nav-item">
-                                        <a class="nav-link active my-nav-link" href="#skills">Skills</a>
-                                    </li>
-                                    <!-- My Skills -->
-                                    <li class="nav-item my-nav-item">
-                                        <a class="nav-link active my-nav-link" href="#education">Education</a>
-                                    </li>
-                                    <!-- My Contact -->
-                                    <li class="nav-item my-nav-item">
-                                        <a class="nav-link active my-nav-link" href="#contact">Contact Me</a>
-                                    </li>
-                                    <li class="nav-item my-nav-item switch-color">
-                                        <div class="nav-link my-nav-link">
-                                            <label class="switch-color-mode">
-                                                <div class="switch-color-mode-checkbox">
-                                                <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
-                                                <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="media-right-nav-list d-none">
+                            <ul class="nav my-nav-list-media d-flex flex-column">
+                                <!-- DARK MODE BUTTON -->
+                                <li class="nav-item my-nav-item switch-color">
+                                    <div class="nav-link">
+                                        <label class="switch-color-mode">
+                                            <div class="switch-color-mode-checkbox">
+                                            <input type="checkbox" class="switch-color-mode-checkbox-input" checked/>
+                                            <span class="switch-color-mode-slider round"><i class="fa fa-adjust"></i></span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <!-- ABOUT ME -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" href="#about" id="media-nav-about">About <i class="fas fa-user-graduate "></i></a>
+                                </li>
+                                <!-- My Projects -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" href="#projects" id="media-nav-project">Projects <i class="fas fa-tasks "></i></a>
+                                </li>
+                                <!-- My Skills -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" href="#skills" id="media-nav-skills">Skills <i class="fas fa-chart-area"></i></a>
+                                </li>
+                                <!-- My Education -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" href="#education" id="media-nav-education">Education <i class="fas fa-university "></i></a>
+                                </li>
+                                <!-- My Contact -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" href="#contact" id="media-nav-contact">Contact <i class="fas fa-phone-square-alt"></i></a>
+                                </li>
+                                <!-- Resume -->
+                                <li class="nav-item my-nav-item nav-item-media">
+                                    <a class="nav-link my-nav-link nav-link-media" target="_blank" href="assets/resume/resume.pdf" id="media-nav-resume">Resume <i class="fas fa-file-contract"></i></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div class="container">
+        <!-- ABOUT SECTION -->
+        <section class="about reveal" id="about">
+            <div class="d-flex flex-column align-items-center about-content">
+                <div class="about-content-headings">
+                    <div class="headings">
+                        <h1 class="color-primary headings-text">About</h1>
+                        <span class="headings-underline"></span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-between about-content-data">
+                    <div class="col-md-6 d-flex flex-column about-content-data-column justify-content-center">
+                        <div class="about-content-data-column-child">
+                            <h2 class="color-primary">Hi👋, I'm 
+                                <span class="color-pink-red">Avinash Dengani</span>.
+                            </h2>
+                            <h2 class="color-primary">I'm
+                                <span 
+                                    class="typer color-pink-red" 
+                                    id="typer" 
+                                    data-words="a Frontend Developer., a Backend Developer., an Android Developer." 
+                                    data-delay="100"
+                                    data-deleteDelay="1000"> 
+                                </span>
+                                <span 
+                                    class="cursor" 
+                                    data-cursorDisplay="|" 
+                                    data-owner="typer">
+                                </span> 
+                            </h2>
+                            <p>
+                                A highly organized, dedicated and goal driven Developer who's sharp-witted to minimal details and eager to learn new technologies and willing to innovate new things which can improve the existing technology.
+                            </p>
+                            <p>
+                               I am a team player who's adaptable to different enviornments and willing to put his knowledge to take up new challenges.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 about-content-data-column d-flex flex-row justify-content-center mt-3">
+                        <div class="card p-3 bg-card rounded shadow-lg">
+                            <img src="assets/images/my-images/avinashDengani.png" alt="" class="text-center my-img" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
     <!-- JAVASCRIPT -->
 
     <!-- BOOTSTRAP -->
@@ -148,7 +248,43 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" 
         referrerpolicy="no-referrer">
     </script>
+    <!-- JQEURY UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- TYPER.JS -->
+    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+    <!-- OEL Carousel 2 -->
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+    <!-- Responsive Tabs -->
+    <script src="assets/js/vendors/jquery.responsiveTabs.min.js"></script>
+    <!-- JQEURY SMOOTH SCROLL -->
+    <script src="assets/js/vendors/jquery.smooth-scroll.js"></script>
+    <!-- JQEURY VALIDATION PLUGIN -->
+    <script src="assets/js/vendors/jquery.validate.min.js"></script>
+    <!-- WAYPOINTS -->
+    <script src="assets/js/vendors/noframework.waypoints.min.js"></script>
+    <!-- MY SMOOTH SCROLL CLASS -->
+    <script src="assets/js/SmoothScroll.js"></script>
+    <!-- MY WAYPOINTS -->
+    <script src="assets/js/MyWaypoints.js"></script>
+    <!-- REVEAL ON SCROLL -->
+    <script src="assets/js/RevealOnScroll.js"></script>
+    <!-- FONT AWESOME -->
+    <script src="assets/js/fontawesome.all.js"></script>
+    <!-- GROWL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.js" integrity="sha512-h77yzL/LvCeAE601Z5RzkoG7dJdiv4KsNkZ9Urf1gokYxOqtt2RVKb8sNQEKqllZbced82QB7+qiDAmRwxVWLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- CUSTOM JS -->
     <script src="assets/js/script.js"></script>
+    
+    <script>
+        // PRELOADER
+        $(window).on('load', function() {
+            $('#status').delay(2500).fadeOut();
+            $('#preloader').delay(2500).fadeOut('slow');
+        });
+    </script>
 </body>
 </html>
