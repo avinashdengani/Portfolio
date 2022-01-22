@@ -135,6 +135,35 @@ mediaWatcherFunction(mediaWatcher);
 mediaWatcher.addListener(mediaWatcherFunction);
 
 
+// SMOOTHSCROLLER FOR NAVBAR
+new SmoothScroll("#nav-about");
+new SmoothScroll("#nav-project");
+new SmoothScroll("#nav-skills");
+new SmoothScroll("#nav-education");
+new SmoothScroll("#nav-contact");
+
+// SMOOTHSCROLLER FOR MEDIA NAVBAR
+new SmoothScroll("#media-nav-about");
+new SmoothScroll("#media-nav-project");
+new SmoothScroll("#media-nav-skills");
+new SmoothScroll("#media-nav-education");
+new SmoothScroll("#media-nav-contact");
+
+// NAVBAR WAYPOINTS
+new MyWaypoints("#about",".my-nav-item .my-nav-link", "#nav-about", "my-nav-link-active");
+new MyWaypoints("#projects", ".my-nav-item .my-nav-link", "#nav-project", "my-nav-link-active");
+new MyWaypoints("#skills", ".my-nav-item .my-nav-link", "#nav-skills", "my-nav-link-active");
+new MyWaypoints("#education", ".my-nav-item .my-nav-link", "#nav-education", "my-nav-link-active");
+new MyWaypoints("#contact", ".my-nav-item .my-nav-link", "#nav-contact", "my-nav-link-active");
+
+// MEDIA NAVBAR WAYPOINTS
+new MyWaypoints("#about",".nav-item-media .nav-link-media", "#media-nav-about", "my-nav-link-active");
+new MyWaypoints("#projects", ".nav-item-media .nav-link-media", "#media-nav-project", "my-nav-link-active");
+new MyWaypoints("#skills", ".nav-item-media .nav-link-media", "#media-nav-skills", "my-nav-link-active");
+new MyWaypoints("#education", ".nav-item-media .nav-link-media", "#media-nav-education", "my-nav-link-active");
+new MyWaypoints("#contact", ".nav-item-media .nav-link-media", "#media-nav-contact", "my-nav-link-active");
+
+
 
 
 //OWL CAROUSEL
