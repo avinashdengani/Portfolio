@@ -126,3 +126,37 @@ $(document).ready(function(){
         </button>`);
 });
 
+// TABS
+let tabsListItems = document.getElementsByClassName("tabs-list-item");
+function setActiveTab(tab) {
+    for(let i=0; i<tabsListItems.length; i++) {
+        tabsListItems[i].childNodes[1].classList.remove('active');
+    }
+    tab.childNodes[1].classList.add('active');
+}
+
+let tabsContentItems = document.getElementsByClassName("tab-content");
+function setActiveTabContent(tabContent) {
+    for(let i=0; i<tabsContentItems.length; i++) {
+        tabsContentItems[i].classList.remove('d-flex');
+        tabsContentItems[i].classList.remove('flex-row');
+    }
+    tabContent.classList.add('d-flex');
+    tabContent.classList.add('flex-row');
+}
+$(document).ready(function(){
+    $( "#tabs" ).responsiveTabs({
+        startCollapsed: 'accordion',
+        collapsible: false,
+        animation: 'slide',
+        duration: 500,
+    });
+    $("#tabs").responsiveTabs('deactivate', 1);
+    
+    for(let i=0; i<tabsListItems.length; i++) {
+        tabsListItems[i].addEventListener('click', function() {
+            setActiveTab(tabsListItems[i]);
+            setActiveTabContent(tabsContentItems[i]);
+        });
+    }
+});
